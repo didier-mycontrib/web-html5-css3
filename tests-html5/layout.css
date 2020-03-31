@@ -9,6 +9,28 @@
 */
 #mainHeader, #mainSideMenu, #mainContent, #mainFooter { padding:1px 0;}
 
+.stickyHeader {
+  position: fixed; /* Set to fixed position */
+  top: 0; /* Position at the top of the page */
+  width: 100%; /* Full width */
+  height : 4rem; /* small necessary height for header content */
+}
+
+.stickyFooter {
+  position: fixed; /* Set to fixed position */
+  bottom: 0; /* Position at the bottom of the page */
+  width: 100%; /* Full width */
+  height : 4rem; /* small necessary height for footer content */
+}
+
+.mainContentUnderStickyHeader{
+	margin-top: 4rem; /* Add a top margin to avoid content overlay */
+}
+
+.mainContentAboveStickyFooter{
+	margin-bottom: 4rem; /* Add a bottom margin to avoid content overlay */
+}
+
 #mainHeader  {  background-color:#FF9900; text-align:center;  }
 #mainNav     {  background-color : #cccccc;  }
 
