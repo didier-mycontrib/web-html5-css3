@@ -1,4 +1,4 @@
-@import "variables";
+@import "_variables";
 
 h2  { 
     color: $couleur1 ;
@@ -50,4 +50,17 @@ p.#{$className} {
   width:300px;
   @include with-rotation(25deg);
   @include with-border(blue);
+}
+
+@mixin mx-hover {
+  &:hover {
+    @content;
+  }
+}
+
+.button {
+  border: 1px solid black;
+  @include mx-hover {
+    border-width: 2px;
+  }
 }

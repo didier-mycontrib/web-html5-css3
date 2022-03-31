@@ -9,6 +9,16 @@
 */
 #mainHeader, #mainSideMenu, #mainContent, #mainFooter { padding:1px 0;}
 
+body {
+    height: 100%;   
+    overflow: hidden;  /*makes the body non-scrollable 
+	(we will add scrolling to the main content containers)*/
+    margin: 0px;  /*removes default style*/
+    display: flex;  /*enables flex content for its children*/
+    box-sizing: border-box;
+}
+
+
 .flexAllInColumnDir {
 	height: 100%;
 	width: 100%;

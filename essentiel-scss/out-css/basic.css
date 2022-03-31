@@ -56,4 +56,11 @@ p.c1 {
   border: 2px solid blue;
 }
 
+.button {
+  border: 1px solid black;
+}
+.button:hover {
+  border-width: 2px;
+}
+
 /*# sourceMappingURL=basic.css.map */
