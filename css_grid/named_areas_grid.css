@@ -1,0 +1,58 @@
+/* comment in css
+   rappels des selecteurs:
+  balise { ... }
+  #id { ...}
+  .classXY { ....}
+  sel1 , sel2 , sel3 { ...}
+  balise#idPrecis { ...} 
+  balise sousBalise {  ... pour sous balise si englobee par balise } 
+*/
+
+/*
+Si les éléments de type grid-item ont une proprriété css de type grid-area (nom logique de la région)
+Alors au niveau du paramétrage du grid-container on peut utilisé le paramétrage avancé 
+grid-template-areas: 
+    "header-a header-a header-a header-a"
+    "sidebar-a . main-a main-a"
+    "footer-a footer-a footer-a footer-a";
+qui permet d'affecter lisiblement les cellules aux régions (on voit la structure de la grille)
+si le nom_region est répété alors la région s'étalera sur plusieurs cellules
+si un . est placé alors une cellule sera inoccupée .
+----
+gràce à ce paramétrage , du coté html , les grid-items peuvent être imbriqués dans un ordre quelconque (tant qu'il sont nommés)
+----
+justify-self : alignement du grid-item selon l'axe principal (souvent horizontal)
+align-self: : alignement du grid-item selon l'axe secondaire (souvent vertical)
+La valeur la plus appropriée pour un éléement de type block (ex: div) est stretch (valeur par défaut)
+La propriété place-self ne fait que fixer d'un seul coup align-self / justify-self (avec auto comme valeur par défaut)
+*/
+
+.header-class {
+  grid-area: header-a;
+ /* justify-self: stretch; by default */
+  background-color: lightgrey;
+}
+.main-class {
+  grid-area: main-a;
+  background-color: lightcoral;
+}
+.sidebar-class {
+  grid-area: sidebar-a;
+  background-color: lightgreen;
+}
+.footer-class {
+  grid-area: footer-a;
+   background-color: lightblue;
+}
+
+.grid-container-class {
+  display: grid;
+  /* justify-items: stretch; by default */
+  grid-template-columns: 150px 50px 150px 150px;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header-a header-a header-a header-a"
+    "sidebar-a . main-a main-a"
+    "footer-a footer-a footer-a footer-a";
+}
+

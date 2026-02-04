@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-3xl font-bold underline text-clifford">
+      Responsive form with Tailwind css
+    </h1>
+   <hr>
+    <h3>responsive proportions (in flex-box)</h3>
+    <div class="flex flex-col gap-y-2 bg-gray-200">
+        <div class="flex flex-row gap-x-4">
+          <div class="w-1/2 bg-green-300">w-1/2</div>
+          <div class="w-1/2 bg-green-300">w-1/2</div>
+        </div>
+         <div class="flex flex-row gap-4">
+          <div class="w-1/3 bg-green-300">w-1/3</div>
+          <div class="w-2/3 bg-green-300">w-2/3</div>
+        </div>
+         <div class="flex flex-row gap-4">
+          <div class="w-1/4 bg-green-300">w-1/4</div>
+          <div class="w-3/4 bg-green-300">w-3/4</div>
+        </div>
+         <div class="flex flex-row gap-4">
+          <div class="w-1/5 bg-green-300">w-1/5</div>
+          <div class="w-4/5 bg-green-300">w-4/5</div>
+        </div>
+         <div class="flex flex-row gap-4">
+          <div class="w-1/6 bg-green-300">w-1/6</div>
+          <div class="w-5/6 bg-green-300">w-5/6</div>
+        </div>
+      </div>
+
+    <hr/>
+  <h3>responsive flexbox (flew-wrap et w-full md:w-49/100 xl:w-32/100)</h3>
+ <div class="flex flex-row flex-wrap space-x-4 space-y-2">
+    <div class="bg-green-300 h-full w-full md:w-49/100 xl:w-32/100">A</div>
+    <div class="bg-green-300 h-full w-full md:w-49/100 xl:w-32/100">B</div>
+    <div class="bg-green-300 h-full w-full md:w-49/100 xl:w-32/100">C</div>
+    <div class="bg-green-300 h-full w-full md:w-49/100 xl:w-32/100">D</div>
+    <div class="bg-green-300 h-full w-full md:w-49/100 xl:w-32/100">E</div>
+    <div class="bg-green-300 h-full w-full md:w-49/100 xl:w-32/100">F</div>
+</div>
+
+<hr/>
+
+  <h3>responsive grid (1colonne par defaut en sm , 2c en md et 3 en xl)</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+    <div class="bg-green-300">A</div>
+    <div class="bg-green-300">B</div>
+    <div class="bg-green-300">C</div>
+    <div class="bg-green-300">D</div>
+    <div class="bg-green-300">E</div>
+    <div class="bg-green-300">F</div>
+</div>
+<hr/>
+
+  <h3>responsive text layout (class="md:text-center sm:text-left")</h3>
+<div class="md:text-center sm:text-left"> azerty </div>
+
+  </body>
+</html>

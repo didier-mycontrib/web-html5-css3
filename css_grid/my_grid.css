@@ -1,0 +1,128 @@
+/* comment in css
+   rappels des selecteurs:
+  balise { ... }
+  #id { ...}
+  .classXY { ....}
+  sel1 , sel2 , sel3 { ...}
+  balise#idPrecis { ...} 
+  balise sousBalise {  ... pour sous balise si englobee par balise } 
+*/
+
+/*
+grid-template-columns ou grid-template-rows sont appelés "grid tracks"
+
+unités classiques : px et fr (fraction  de la largeur totale , 2fr = 2 fois plus grand que 1fr)
+on peut combiner px (fixes) et fr(relatifs)
+on peut aussi combiner repeat(n,...)
+valeurs spéciales : auto (un peu comme fr mais pas prioritaire) ,
+ min-content (taille nécessaire du texte s'il devait être réparti sur plusieurs lignes) , max-content (taille total du texte)
+-----
+En paramétrant le track "grid-template-columns" , on rend explicite la taille des colonnes et implicite la taille des lignes
+et vice versa si l'on fixait grid-template-rows
+-----
+le paramètre secondaire grid-auto-rows (ou ...) permet d'attribuer une taille automatique par défaut au coté secondaire implicite
+grid-auto-rows peut avoir une valeur fixe (ex: 100px; ) ou bien peut avoir la valeur minmax(40px, auto)
+de manière à occuper au minimum 40px de hauteur et plus si la taille de l'éléement impriqué est plus grande (ajustement automatique selon contenu)
+----
+par défaut pas d'espace (gap) entre lignes ou entre colonnes
+
+
+==============
+au niveau des box d'éléments imbriqués , les valeurs start , end sont à interpréter /comprendre comme 
+numéro première et dernière bordure (ou délimitation) de cellule .
+Ces numéros de délimitations/bords vont de 1 à n+1 dans le sens principal et de -1 à -n+1 dans le sens inverse
+en combinant cela bien au niveau du paramétrage d'un grid-item , on peut avoir des régions occupant plusieurs colonnes ou plusieurs lignes
+syntaxe abrégée : 
+grid-column-start: 1;  grid-column-end: 5;  est equivalent à grid-column: 1 / 5 ;
+grid-column peut également avoir la valeur span 4 (ou autre) qui signifie (étalement sur 4 cellules)
+
+==> ok , ça fonctionne mais attention,les paramétrages dépendent à fond  du nombre de colonnes(ou/et lignes)
+
+En résumé:
+- grid container : le contenant structuré avec display: grid
+- grid item : un descendant direct du grid container
+- grid tracks : structuration (nb de coloonnes/lignes et proportions)
+- grid cells : unité fondamentale du découpage en lignes ou colonnes
+- grid lines : séparation/délimitation (par défaut invisible) entre cellules (nuémrotés de 1 à n+1 , de -1 à -n+1)
+      et avec des noms possibles entre [] (ex: grid-template-columns: [start] 1fr [c1-c2] 1fr [c2-c3] 1fr [c3-c4] 1fr [end]; et ailleurs:  grid-column: start/end; )
+- grid région : surface globale occupée selon les paramétrages du grid_item
+
+------
+Les propriétés justify-items , align-items (place-items combiné) applicables sur  sont bien par défaut avec leurs valeurs "stretch" 
+Les propriétés justify-content , align-contents (et place-content combiné) permettent
+ de positionner l'ensemble de la grille dans le cas où les cellules seraient toutes en "px" et n'ocupperaient pas toute
+la surface du grid-container (possibilité d'espacement régulier ou d'alignement sur un bord ,  ...)
+
+*/
+
+.grid-wrapper-1 {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-auto-rows : minmax(40px,auto);
+  column-gap: 8px;
+  row-gap: 0.5em;
+}
+
+.grid-wrapper-2 {
+  display: grid;
+  grid-template-columns: 2fr repeat(3,1fr);
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.grid-wrapper-3 {
+  display: grid;
+  /*grid-template-columns: repeat(4,1fr);*/
+  grid-template-columns: [start] 1fr [c1-c2] 1fr [c2-c3] 1fr [c3-c4] 1fr [end];
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.box1 {
+  /* grid-column-start: 1; 
+  grid-column-end: 5; */
+  /* grid-column: 1 / 5; */
+  grid-column: start/end;
+  /* grid-column : span 4; */
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.box2 {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.grid-wrapper-1 > div {
+    background-color : lightyellow ;
+}
+
+.grid-wrapper-2> div {
+    background-color : lightblue ;
+}
+
+.grid-wrapper-3> div {
+    background-color : lightgreen ;
+}
+
+.grid-row-3c-wrapper{
+   display: grid;
+   grid-template-columns: minmax(40px,auto)  repeat(2,1fr);
+   grid-auto-rows : minmax(40px,auto);
+}
+
+.grid-row-2c-wrapper{
+   display: grid;
+   grid-template-columns: minmax(40px,auto)  1fr;
+   grid-auto-rows : minmax(40px,auto);
+}
+
+.row-wrapper{
+  display: contents;
+}
+
+.row-wrapper> div {
+    background-color : lightblue ;
+    border: black 1px solid;
+}

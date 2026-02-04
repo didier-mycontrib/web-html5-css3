@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-3xl font-bold underline text-clifford">
+      Welcome to Tailwind css page
+    </h1>
+    <hr/>
+    <h3>block styling</h3>
+    <pre>
+      couleurs:
+      teintes (-shade) des couleurs : de -50 (très clair) , 100 , 200, ... , 900 à 950 (très foncé)
+      en général : -600 ou -700 : couleur la plus classique
+      Ex: text-green-800 , bg-gray-200 , border-blue-600 , ...
+      Pour gradient/dégradé de couleur: bg-gradient-to-r (or -r , -br)  from-gray-100 to-gray-500
+
+      Effets:
+      Pour transparence/opacité : opacity-100 où 80 = % opacité (100 : pas transparent , 0 : entierement transparent)
+      Ombre : text-shadow-lg , shadow-lg (pour box) ?
+
+      espacements et tailles:
+      p for padding (internal margin), pt,pr,pb,pl (padding top,right,bottom,left ) with -size (0,1,2,3,...)
+      px id for x/horizontal padding (left & right) , py if for vertical padding (top & bottom)
+      m is for margin (external margin)
+      Ex: p-1 , m-1 , ... , border-0 , border-3
+      </pre>
+      <div class="p-1 m-1 border-3 border-blue-600  text-green-800 font-bold rounded 
+      bg-gradient-to-r from-gray-100 to-gray-500 opacity-80  text-shadow-lg">
+        div1 <br/>
+        suite ...
+        </div>
+<hr/>
+<pre>
+  responsive css: (via prefix sm: md: lg: xl: 2xl: )
+  Ex: border-2 lg:text-xl lg:text-red-600 lg:border-4
+  w-16 md:w-32 lg:w-48
+
+  Size unit : w-8 -8 , -16, -32 (predefined sclae where 1unit = 0.25rem envion 4px)
+  ou bien en fraction 1/2 (50%) 2/3 (deux tiers) , w-full : 100%
+  </pre>
+
+        <div class="border-2 border-blue-600 lg:text-xl lg:text-red-600 lg:border-4" >
+          my responsive div with image
+          <img src="images/image3.png" class="w-16 md:w-32 lg:w-48" />
+        </div>
+
+  </body>
+</html>
+
+<!--
+  resumé:
+  https://medium.com/@sibimahesh/tailwind-css-essentials-a-practical-cheat-sheet-for-daily-web-development-e22356fe8097
+
+  layers de tailwind:
+  https://medium.com/@mazeenacader/mastering-tailwind-css-architecture-for-beginners-c03b4cffaba7
+  -->

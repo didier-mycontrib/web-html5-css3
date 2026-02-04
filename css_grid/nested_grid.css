@@ -1,0 +1,33 @@
+/* comment in css
+   rappels des selecteurs:
+  balise { ... }
+  #id { ...}
+  .classXY { ....}
+  sel1 , sel2 , sel3 { ...}
+  balise#idPrecis { ...} 
+  balise sousBalise {  ... pour sous balise si englobee par balise } 
+*/
+
+/*
+attention: la valeur spéciale subgrid signifie même paramétrage que la grille parente
+il faut mieux appeler "nested grid" une grille imbriquée
+*/
+
+.grid-wrapper-a {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows : minmax(40px,auto);
+  column-gap: 8px;
+  row-gap: 0.5em;
+}
+
+.nestedgrid-wrapper-3r {
+  display: grid;
+   grid-template-rows: 1fr 1fr 1fr;
+}
+
+
+.grid-wrapper-a > div {
+    background-color : lightyellow ;
+}
+
