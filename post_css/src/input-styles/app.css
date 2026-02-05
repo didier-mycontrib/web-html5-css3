@@ -1,0 +1,14 @@
+/* ------ custom properties (variables)------ */
+@import 'custom_props';
+
+
+
+/* ------ tailwind without tailwindcss/preflight.css for default browser behavior/look ------ */
+@import 'tailwindcss/theme.css';
+@import 'tailwindcss/utilities.css';
+
+
+
+/* ------ partials with nested styles ------ */
+@import 'sa';
+@import 'sb';

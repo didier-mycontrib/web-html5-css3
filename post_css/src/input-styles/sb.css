@@ -1,0 +1,13 @@
+.c3{
+	color:green;
+	&:hover{
+		font-weight: bold;
+	}
+}
+
+.c4{
+	@apply  bg-red-200;
+	border: 1px solid blue;
+}
+
+

@@ -7,17 +7,25 @@
 	<style type="text/tailwindcss">
      @layer components {
             .card {
-                background-color: var(--color-white);
+                background-color: var(--color-gray-100);
                 border-radius: var(--radius-lg);
+                border-color: var(--color-blue-600);
+                border-width: 2px;
+                border-style: solid;
                 padding: --spacing(6);
                 box-shadow: var(--shadow-xl);
+                margin: --spacing(2);
             }
         }
     </style>
   </head>
   <body>
-    <div class="card rounded-none">
-        my card
+    <div class="card">
+        my card 1
+     </div>
+
+      <div class="card rounded-none">
+        my card 2
      </div>
     </body>
 </html>

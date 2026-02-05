@@ -1,0 +1,27 @@
+/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+:root {
+  --my-bg-color: #df6666;
+}
+:root, :host {
+  --color-red-200: oklch(88.5% 0.062 18.334);
+}
+.c1 {
+  color: black;
+}
+.c1:hover {
+  color: red;
+}
+.c2 {
+  background-color: var(--my-bg-color);
+  color: blue;
+}
+.c3 {
+  color: green;
+}
+.c3:hover {
+  font-weight: bold;
+}
+.c4 {
+  background-color: var(--color-red-200);
+  border: 1px solid blue;
+}

@@ -1,0 +1,11 @@
+.c1{
+	color:black;
+	&:hover{
+		color:red;
+	}
+}
+
+.c2{
+	background-color: var(--my-bg-color);
+	color:blue;
+}

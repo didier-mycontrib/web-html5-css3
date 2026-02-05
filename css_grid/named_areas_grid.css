@@ -9,8 +9,8 @@
 */
 
 /*
-Si les éléments de type grid-item ont une proprriété css de type grid-area (nom logique de la région)
-Alors au niveau du paramétrage du grid-container on peut utilisé le paramétrage avancé 
+Si les éléments de type grid-item ont une propriété css de type grid-area (nom logique de la région)
+Alors au niveau du paramétrage du grid-container on peut utiliser le paramétrage avancé 
 grid-template-areas: 
     "header-a header-a header-a header-a"
     "sidebar-a . main-a main-a"
@@ -23,7 +23,7 @@ gràce à ce paramétrage , du coté html , les grid-items peuvent être imbriqu
 ----
 justify-self : alignement du grid-item selon l'axe principal (souvent horizontal)
 align-self: : alignement du grid-item selon l'axe secondaire (souvent vertical)
-La valeur la plus appropriée pour un éléement de type block (ex: div) est stretch (valeur par défaut)
+La valeur la plus appropriée pour un élément de type block (ex: div) est stretch (valeur par défaut)
 La propriété place-self ne fait que fixer d'un seul coup align-self / justify-self (avec auto comme valeur par défaut)
 */
 
